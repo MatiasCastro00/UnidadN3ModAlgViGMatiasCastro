@@ -5,7 +5,7 @@ using namespace sf;
 Texture textureNew;
 Texture textureCenter;
 Sprite circleNew;
-int main() {
+int main9() {
 	textureNew.loadFromFile("rcircle.png");
 	int width = 800;
 	int height = 600;

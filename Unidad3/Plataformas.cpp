@@ -3,7 +3,7 @@
 using namespace sf;
 Texture platformTexture;
 Sprite platformSprite;
-int main5()
+int main()
 {
 	platformTexture.loadFromFile("plataforma.jpg");
 	Vector2u textureSize = platformTexture.getSize();
@@ -17,11 +17,13 @@ int main5()
 		for (size_t i = 0; i < 8; i++)
 		{
 			platformSprite.setTexture(platformTexture);
-			platformSprite.setPosition(i * (padding * 0.1 * 2), 800 - (25 * i));
+			platformSprite.setOrigin(platformSprite.getLocalBounds().width / 2, platformSprite.getLocalBounds().height);
+			platformSprite.setPosition(i * (padding * 0.1 * 2), 800);
 			platformSprite.setScale(0.1, 0.1 * i);
 			App.draw(platformSprite);
 		}
 		platformSprite.setTexture(platformTexture);
+		platformSprite.setOrigin(0, 0);
 		platformSprite.setPosition(8 * (padding * 0.1 * 2), 800 - (25 * 7));
 		platformSprite.setScale(0.1 * 14, 0.1);
 		App.draw(platformSprite);
